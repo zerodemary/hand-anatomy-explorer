@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hand Anatomy Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="noise-layer" aria-hidden="true"></div>
+    <div class="app">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Dexterous Hand Anatomy Reference</p>
+          <h1>人体手部解剖可视化</h1>
+          <p class="subtitle">用于灵巧手结构设计的关节 ROM 与骨段长度参考</p>
+        </div>
+        <div class="model-picker">
+          <label for="populationSelect">模型版本</label>
+          <select id="populationSelect">
+            <option value="western">Western Male · 50th</option>
+            <option value="asian">Asian Male · 50th (×0.935)</option>
+          </select>
+        </div>
+      </header>
+
+      <nav class="tabs" aria-label="主导航">
+        <button class="tab-btn active" data-tab="explorer">Explorer</button>
+        <button class="tab-btn" data-tab="lengths">Lengths</button>
+        <button class="tab-btn" data-tab="naming">Naming Guide</button>
+      </nav>
+
+      <main>
+        <section id="tab-explorer" class="tab-panel active">
+          <div class="grid-2">
+            <article class="panel visual-panel">
+              <div class="panel-head">
+                <h2>关节浏览器（背侧视角）</h2>
+                <p>点击关节查看 ROM、术语命名和对应骨段长度</p>
+              </div>
+              <svg id="handSvg" viewBox="0 0 560 560" role="img" aria-label="手部关节示意图"></svg>
+              <div class="legend" id="fingerLegend"></div>
+            </article>
+
+            <aside class="panel detail-panel">
+              <div class="panel-head">
+                <h2 id="jointTitle"></h2>
+                <p id="jointMeta"></p>
+              </div>
+
+              <section>
+                <h3>活动范围（ROM）</h3>
+                <div id="motionControls" class="motion-list"></div>
+              </section>
+
+              <section>
+                <h3>骨段长度（mm）</h3>
+                <div id="segmentSummary" class="segment-summary"></div>
+              </section>
+            </aside>
+          </div>
+        </section>
+
+        <section id="tab-lengths" class="tab-panel">
+          <article class="panel">
+            <div class="panel-head">
+              <h2>骨段长度总览</h2>
+              <p>
+                基准采用 Western Male 50th；Asian Male 使用文档约定比例 ×0.935。
+              </p>
+            </div>
+            <div id="lengthTableWrap"></div>
+          </article>
+        </section>
+
+        <section id="tab-naming" class="tab-panel">
+          <div class="grid-2">
+            <article class="panel">
+              <div class="panel-head">
+                <h2>关节命名规范</h2>
+                <p>缩写、英文全称、中文、关节类型和自由度（DOF）</p>
+              </div>
+              <div id="jointNamingTable"></div>
+            </article>
+
+            <article class="panel">
+              <div class="panel-head">
+                <h2>角度命名规则</h2>
+                <p>以临床与生物力学常用命名统一表达</p>
+              </div>
+              <div id="angleNamingTable"></div>
+              <div class="sources">
+                <h3>命名依据与引用</h3>
+                <ul>
+                  <li>
+                    <a href="https://orthoinfo.aaos.org/en/treatment/finger-joint-replacement/" target="_blank" rel="noreferrer">AAOS OrthoInfo: Finger Joint Replacement</a>
+                    （DIP/PIP/MCP 与指骨命名）
+                  </li>
+                  <li>
+                    <a href="https://orthoinfo.aaos.org/en/treatment/thumb-carpometacarpal-cmc-arthroplasty/" target="_blank" rel="noreferrer">AAOS OrthoInfo: Thumb CMC Arthroplasty</a>
+                    （拇指 CMC/MCP/IP 的结构与动作术语）
+                  </li>
+                  <li>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/15844264/" target="_blank" rel="noreferrer">ISB STC Recommendation (Part II)</a>
+                    （关节坐标系与运动命名标准化）
+                  </li>
+                  <li>
+                    <a href="https://www.ifssh.info/history.php" target="_blank" rel="noreferrer">IFSSH History & Purpose</a>
+                    （手外科命名标准化职责）
+                  </li>
+                  <li>
+                    <a href="https://fipat.library.dal.ca/wp-content/uploads/2020/09/FIPAT-TA2-Part-2.pdf" target="_blank" rel="noreferrer">FIPAT Terminologia Anatomica 2</a>
+                    （解剖术语标准体系）
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

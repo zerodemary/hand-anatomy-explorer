@@ -4,7 +4,7 @@
 
 ## Live Demo
 
-部署后访问：`https://<your-github-username>.github.io/<repo-name>/`
+https://zerodemary.github.io/hand-anatomy-explorer/
 
 ## 功能
 

@@ -1,0 +1,7 @@
+[
+  { "id": "thumb", "label": "Thumb", "order": 1 },
+  { "id": "index", "label": "Index", "order": 2 },
+  { "id": "middle", "label": "Middle", "order": 3 },
+  { "id": "ring", "label": "Ring", "order": 4 },
+  { "id": "little", "label": "Little", "order": 5 }
+]

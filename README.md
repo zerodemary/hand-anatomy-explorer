@@ -1,34 +1,64 @@
 # Hand Anatomy Explorer
 
-用于灵巧手设计的人体手部解剖可视化网站（开源版）。
+Open-source 3D interactive hand anatomy reference for dexterous hand design.
 
 ## Live Demo
 
 https://zerodemary.github.io/hand-anatomy-explorer/
 
-## 功能
+## v0.3 Status
 
-- Explorer：可点击关节示意图（拇指 + 四指），查看 ROM 与当前角度。
-- Lengths：骨段长度表（mm），支持 `Western Male 50th` / `Asian Male 50th (×0.935)` 切换。
-- Naming Guide：关节缩写和角度术语规范（含 CMC/MCP/PIP/DIP/IP）。
+This repository follows an incremental commit plan.
+Current progress: **Commit 1 (Foundation Bootstrap)**.
 
-## 数据与命名依据
+Included in this increment:
 
-- AAOS Finger Joint Replacement: https://orthoinfo.aaos.org/en/treatment/finger-joint-replacement/
-- AAOS Thumb CMC Arthroplasty: https://orthoinfo.aaos.org/en/treatment/thumb-carpometacarpal-cmc-arthroplasty/
-- ISB STC Recommendation (Part II): https://pubmed.ncbi.nlm.nih.gov/15844264/
-- IFSSH History & Purpose: https://www.ifssh.info/history.php
-- FIPAT Terminologia Anatomica 2: https://fipat.library.dal.ca/wp-content/uploads/2020/09/FIPAT-TA2-Part-2.pdf
+- React + TypeScript + Vite + Tailwind setup
+- three.js + @react-three/fiber + @react-three/drei wiring
+- Zod schema-driven data layer
+- Static JSON dataset with stable IDs and source traceability
+- Vitest + React Testing Library test scaffolding
+- GitHub Pages deployment workflow for `dist/`
 
-## 本地运行
+## Product Scope (v0.3 target)
+
+- Explorer: 3D parametric hand model (Approach A)
+- Lengths: profile-aware segment table and comparison
+- Naming Guide: joint/motion naming conventions + source list
+
+## Required Profiles
+
+- `western_male_50`
+- `asian_male_50`
+
+## Local Development
 
 ```bash
-cd hand-anatomy-site
-python3 -m http.server 4173
+npm install
+npm run dev
 ```
 
-打开 `http://127.0.0.1:4173/index.html`
+## Test
 
-## 开源协议
+```bash
+npm run test
+```
 
-MIT License，见 [LICENSE](./LICENSE)。
+## Build
+
+```bash
+npm run build
+```
+
+## Data Sources (current references)
+
+- AAOS Joint Motion (2nd)
+- Kapandji Vol.1
+- Buryanov & Kotiuk 2010
+- IFSSH nomenclature context
+- FIPAT Terminologia Anatomica 2
+- Kuo et al. 2009 scaling reference
+
+## License
+
+MIT. See [LICENSE](./LICENSE).

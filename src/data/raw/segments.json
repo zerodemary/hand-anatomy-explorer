@@ -1,0 +1,25 @@
+[
+  { "id": "thumb_mc", "fingerId": "thumb", "label": "Metacarpal", "order": 1 },
+  { "id": "thumb_pp", "fingerId": "thumb", "label": "Proximal Phalanx", "order": 2 },
+  { "id": "thumb_dp", "fingerId": "thumb", "label": "Distal Phalanx", "order": 3 },
+
+  { "id": "index_mc", "fingerId": "index", "label": "Metacarpal", "order": 1 },
+  { "id": "index_pp", "fingerId": "index", "label": "Proximal Phalanx", "order": 2 },
+  { "id": "index_mp", "fingerId": "index", "label": "Middle Phalanx", "order": 3 },
+  { "id": "index_dp", "fingerId": "index", "label": "Distal Phalanx", "order": 4 },
+
+  { "id": "middle_mc", "fingerId": "middle", "label": "Metacarpal", "order": 1 },
+  { "id": "middle_pp", "fingerId": "middle", "label": "Proximal Phalanx", "order": 2 },
+  { "id": "middle_mp", "fingerId": "middle", "label": "Middle Phalanx", "order": 3 },
+  { "id": "middle_dp", "fingerId": "middle", "label": "Distal Phalanx", "order": 4 },
+
+  { "id": "ring_mc", "fingerId": "ring", "label": "Metacarpal", "order": 1 },
+  { "id": "ring_pp", "fingerId": "ring", "label": "Proximal Phalanx", "order": 2 },
+  { "id": "ring_mp", "fingerId": "ring", "label": "Middle Phalanx", "order": 3 },
+  { "id": "ring_dp", "fingerId": "ring", "label": "Distal Phalanx", "order": 4 },
+
+  { "id": "little_mc", "fingerId": "little", "label": "Metacarpal", "order": 1 },
+  { "id": "little_pp", "fingerId": "little", "label": "Proximal Phalanx", "order": 2 },
+  { "id": "little_mp", "fingerId": "little", "label": "Middle Phalanx", "order": 3 },
+  { "id": "little_dp", "fingerId": "little", "label": "Distal Phalanx", "order": 4 }
+]

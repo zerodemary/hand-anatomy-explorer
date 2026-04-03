@@ -1,0 +1,48 @@
+[
+  {
+    "id": "aaos_joint_motion_2e",
+    "title": "AAOS - Clinical Measurement of Joint Motion (2nd ed.)",
+    "publisher": "American Academy of Orthopaedic Surgeons",
+    "year": 2011,
+    "version": "2nd",
+    "note": "ROM reference baseline"
+  },
+  {
+    "id": "kapandji_upper_limb_6e",
+    "title": "Kapandji - The Physiology of the Joints Vol. 1",
+    "publisher": "Elsevier",
+    "year": 2008,
+    "version": "6th",
+    "note": "Kinematic and joint behavior reference"
+  },
+  {
+    "id": "buryanov_kotiuk_2010",
+    "title": "Proportions of Hand Segments",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/20573638/",
+    "publisher": "J Hand Surg Eur",
+    "year": 2010,
+    "note": "Segment length baseline"
+  },
+  {
+    "id": "ifssh_nomenclature",
+    "title": "IFSSH Hand Nomenclature Context",
+    "url": "https://www.ifssh.info/history.php",
+    "publisher": "IFSSH",
+    "note": "Nomenclature governance context"
+  },
+  {
+    "id": "fipat_ta2",
+    "title": "Terminologia Anatomica 2",
+    "url": "https://fipat.library.dal.ca/wp-content/uploads/2020/09/FIPAT-TA2-Part-2.pdf",
+    "publisher": "FIPAT",
+    "year": 2020,
+    "version": "TA2"
+  },
+  {
+    "id": "kuo_2009_scale",
+    "title": "Asian hand anthropometric scaling reference",
+    "publisher": "Kuo et al.",
+    "year": 2009,
+    "note": "0.935 profile scaling model"
+  }
+]

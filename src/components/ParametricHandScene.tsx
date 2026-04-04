@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Grid } from "@react-three/drei";
 import { FINGERS } from "@/data/catalog";
 import type { Profile } from "@/data/schema";
-import { getSegmentMeasurementsByFinger, getProfileScale } from "@/core/selectors";
+import { getFingerSegmentLengths, getProfileScaleById } from "@/domain/read-models";
 import type { SelectableId } from "@/core/hand-model-adapter";
 
 const JOINT_CHAINS: Record<string, string[]> = {
@@ -43,7 +43,7 @@ type HandGeometryProps = {
 function HandGeometry({ profile, selected, onSelect }: HandGeometryProps) {
   const grouped = useMemo(() => {
     return FINGERS.map((finger) => {
-      const segments = getSegmentMeasurementsByFinger(profile.id, finger.id);
+      const segments = getFingerSegmentLengths(profile.id, finger.id);
       return { finger, segments };
     });
   }, [profile.id]);
@@ -83,7 +83,7 @@ function HandGeometry({ profile, selected, onSelect }: HandGeometryProps) {
 
             {segments.map((segment, idx) => {
               const h = mmToUnits(segment.lengthMm);
-              const segmentId = segment.segmentId;
+              const segmentId = segment.segment.id;
               const isSegmentSelected = selected?.type === "segment" && selected.id === segmentId;
 
               const body = (
@@ -139,7 +139,7 @@ type ParametricHandSceneProps = {
 };
 
 export function ParametricHandScene({ profile, selected, onSelect }: ParametricHandSceneProps) {
-  const scale = getProfileScale(profile);
+  const scale = getProfileScaleById(profile.id);
 
   return (
     <div className="h-[520px] w-full overflow-hidden rounded-xl border border-slate-800 bg-slate-950">

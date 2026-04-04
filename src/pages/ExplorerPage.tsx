@@ -1,41 +1,41 @@
 import { useMemo, useState } from "react";
-import { JOINTS, SEGMENTS } from "@/data/catalog";
 import type { Profile } from "@/data/schema";
-import { getDefaultJointId, getJointById, getRomByProfileAndJoint, getSegmentMeasurementsByFinger, getSourcesByIds } from "@/core/selectors";
 import { ParametricHandScene } from "@/components/ParametricHandScene";
 import { ACTIVE_HAND_MODEL_ADAPTER } from "@/core/hand-model-adapter";
 import type { SelectableId } from "@/core/hand-model-adapter";
+import {
+  getDefaultJointId,
+  getJointExplorerDetail,
+  getSegmentExplorerDetail,
+  listExplorerJointOptions
+} from "@/domain/read-models";
 
-function JointDetails({ profile, jointId }: { profile: Profile; jointId: string }) {
-  const joint = getJointById(jointId);
-  const rom = getRomByProfileAndJoint(profile.id, jointId);
+function JointDetails({ profileId, jointId }: { profileId: string; jointId: string }) {
+  const detail = getJointExplorerDetail(profileId, jointId);
 
-  if (!joint) {
+  if (!detail) {
     return <p className="text-sm text-slate-400">Select a joint.</p>;
   }
-
-  const segmentRows = getSegmentMeasurementsByFinger(profile.id, joint.fingerId);
-  const sourceIds = Array.from(new Set([...rom.flatMap((r) => r.sourceIds), ...segmentRows.flatMap((s) => s.sourceIds)]));
-  const sources = getSourcesByIds(sourceIds);
 
   return (
     <div className="space-y-5">
       <div>
-        <h3 className="text-xl font-semibold">{joint.id}</h3>
+        <h3 className="text-xl font-semibold">{detail.joint.id}</h3>
         <p className="mt-1 text-sm text-slate-300">
-          {joint.fullLabel} · {joint.jointType} · DOF {joint.dof}
+          {detail.joint.fullLabel} · {detail.joint.jointType} · DOF {detail.joint.dof}
         </p>
       </div>
 
       <section>
         <h4 className="mb-2 text-sm font-semibold uppercase tracking-wide text-cyan-300">ROM</h4>
         <div className="space-y-2">
-          {rom.map((item) => (
-            <div key={item.id} className="rounded border border-slate-800 bg-slate-900 p-2 text-sm">
-              <div>{item.motion.label}</div>
+          {detail.romRows.map((row) => (
+            <div key={row.measurementId} className="rounded border border-slate-800 bg-slate-900 p-2 text-sm">
+              <div>{row.motion.label}</div>
               <div className="text-slate-300">
-                {item.minDeg}° to {item.maxDeg}° ({item.motion.negativeDirection} / {item.motion.positiveDirection})
+                {row.minDeg}° to {row.maxDeg}° ({row.motion.negativeDirection} / {row.motion.positiveDirection})
               </div>
+              {row.meta.isDerived && <div className="mt-1 text-xs text-amber-300">Derived measurement</div>}
             </div>
           ))}
         </div>
@@ -44,9 +44,12 @@ function JointDetails({ profile, jointId }: { profile: Profile; jointId: string 
       <section>
         <h4 className="mb-2 text-sm font-semibold uppercase tracking-wide text-cyan-300">Segment Lengths (same finger)</h4>
         <div className="space-y-2">
-          {segmentRows.map((row) => (
-            <div key={row.id} className="flex justify-between rounded border border-slate-800 bg-slate-900 px-3 py-2 text-sm">
-              <span>{row.segmentLabel}</span>
+          {detail.fingerSegments.map((row) => (
+            <div
+              key={row.measurementId}
+              className="flex justify-between rounded border border-slate-800 bg-slate-900 px-3 py-2 text-sm"
+            >
+              <span>{row.segment.label}</span>
               <span>{row.lengthMm.toFixed(1)} mm</span>
             </div>
           ))}
@@ -56,7 +59,7 @@ function JointDetails({ profile, jointId }: { profile: Profile; jointId: string 
       <section>
         <h4 className="mb-2 text-sm font-semibold uppercase tracking-wide text-cyan-300">Sources</h4>
         <ul className="space-y-1 text-sm text-slate-300">
-          {sources.map((source) => (
+          {detail.sourceTrace.sources.map((source) => (
             <li key={source.id}>
               <span className="font-mono text-xs text-slate-400">{source.id}</span> · {source.title}
             </li>
@@ -68,24 +71,22 @@ function JointDetails({ profile, jointId }: { profile: Profile; jointId: string 
 }
 
 function SegmentDetails({ profile, segmentId }: { profile: Profile; segmentId: string }) {
-  const segment = SEGMENTS.find((s) => s.id === segmentId);
-  if (!segment) {
+  const detail = getSegmentExplorerDetail(profile.id, segmentId);
+
+  if (!detail) {
     return <p className="text-sm text-slate-400">Select a segment.</p>;
   }
-  const rows = getSegmentMeasurementsByFinger(profile.id, segment.fingerId);
-  const current = rows.find((row) => row.segmentId === segment.id);
-  const sources = getSourcesByIds(current?.sourceIds ?? []);
 
   return (
     <div className="space-y-4">
       <div>
-        <h3 className="text-xl font-semibold">{segment.id}</h3>
-        <p className="mt-1 text-sm text-slate-300">{segment.label}</p>
+        <h3 className="text-xl font-semibold">{detail.segment.id}</h3>
+        <p className="mt-1 text-sm text-slate-300">{detail.segment.label}</p>
       </div>
-      {current ? (
+      {detail.measurement ? (
         <div className="rounded border border-slate-800 bg-slate-900 p-3 text-sm">
-          Length: <span className="font-semibold">{current.lengthMm.toFixed(1)} mm</span>
-          {current.evidenceLevel === "derived" && (
+          Length: <span className="font-semibold">{detail.measurement.lengthMm.toFixed(1)} mm</span>
+          {detail.measurement.meta.isDerived && (
             <p className="mt-1 text-xs text-amber-300">Derived value ({profile.label})</p>
           )}
         </div>
@@ -96,8 +97,10 @@ function SegmentDetails({ profile, segmentId }: { profile: Profile; segmentId: s
       <section>
         <h4 className="mb-2 text-sm font-semibold uppercase tracking-wide text-cyan-300">Sources</h4>
         <ul className="space-y-1 text-sm text-slate-300">
-          {sources.map((source) => (
-            <li key={source.id}>{source.title}</li>
+          {detail.sourceTrace.sources.map((source) => (
+            <li key={source.id}>
+              <span className="font-mono text-xs text-slate-400">{source.id}</span> · {source.title}
+            </li>
           ))}
         </ul>
       </section>
@@ -108,7 +111,7 @@ function SegmentDetails({ profile, segmentId }: { profile: Profile; segmentId: s
 export function ExplorerPage({ profile }: { profile: Profile }) {
   const [selected, setSelected] = useState<SelectableId>({ type: "joint", id: getDefaultJointId() });
 
-  const jointOptions = useMemo(() => JOINTS.map((joint) => joint.id), []);
+  const jointOptions = useMemo(() => listExplorerJointOptions(), []);
 
   return (
     <section className="grid grid-cols-1 gap-5 lg:grid-cols-[1.2fr_0.8fr]">
@@ -125,9 +128,9 @@ export function ExplorerPage({ profile }: { profile: Profile }) {
               value={selected.type === "joint" ? selected.id : ""}
               onChange={(e) => setSelected({ type: "joint", id: e.target.value })}
             >
-              {jointOptions.map((jointId) => (
-                <option key={jointId} value={jointId}>
-                  {jointId}
+              {jointOptions.map((joint) => (
+                <option key={joint.id} value={joint.id}>
+                  {joint.label}
                 </option>
               ))}
             </select>
@@ -139,7 +142,7 @@ export function ExplorerPage({ profile }: { profile: Profile }) {
 
       <aside className="rounded-xl border border-slate-800 bg-slate-900 p-4">
         {selected.type === "joint" ? (
-          <JointDetails profile={profile} jointId={selected.id} />
+          <JointDetails profileId={profile.id} jointId={selected.id} />
         ) : (
           <SegmentDetails profile={profile} segmentId={selected.id} />
         )}

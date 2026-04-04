@@ -1,13 +1,14 @@
-import { SEGMENTS } from "@/data/catalog";
 import type { Profile } from "@/data/schema";
-import { getProfileComparison } from "@/core/selectors";
+import { getLengthComparisonRows } from "@/domain/read-models";
 
 export function LengthsPage({ profile }: { profile: Profile }) {
+  const rows = getLengthComparisonRows(profile.id);
+
   return (
     <section className="rounded-xl border border-slate-800 bg-slate-900 p-4">
       <h2 className="text-lg font-semibold">Lengths</h2>
       <p className="mt-1 text-sm text-slate-400">
-        Commit 1 baseline table with profile comparison and derived marker.
+        Commit 2 domain read model with profile comparison and derived marker.
       </p>
 
       <div className="mt-4 overflow-auto">
@@ -22,17 +23,16 @@ export function LengthsPage({ profile }: { profile: Profile }) {
             </tr>
           </thead>
           <tbody>
-            {SEGMENTS.map((segment) => {
-              const cmp = getProfileComparison(segment.id);
-              const current = profile.id === "western_male_50" ? cmp.western : cmp.asian;
+            {rows.map((row) => {
+              const { segment, western, asian, current } = row;
               return (
                 <tr key={segment.id} className="text-slate-100">
                   <td className="border-b border-slate-800 px-2 py-2 font-mono text-xs">{segment.id}</td>
-                  <td className="border-b border-slate-800 px-2 py-2">{cmp.western?.lengthMm.toFixed(1) ?? "-"}</td>
-                  <td className="border-b border-slate-800 px-2 py-2">{cmp.asian?.lengthMm.toFixed(1) ?? "-"}</td>
+                  <td className="border-b border-slate-800 px-2 py-2">{western?.lengthMm.toFixed(1) ?? "-"}</td>
+                  <td className="border-b border-slate-800 px-2 py-2">{asian?.lengthMm.toFixed(1) ?? "-"}</td>
                   <td className="border-b border-slate-800 px-2 py-2 font-semibold">{current?.lengthMm.toFixed(1) ?? "-"}</td>
                   <td className="border-b border-slate-800 px-2 py-2 text-xs text-amber-300">
-                    {current?.evidenceLevel === "derived" ? "yes" : "no"}
+                    {current?.meta.isDerived ? "yes" : "no"}
                   </td>
                 </tr>
               );

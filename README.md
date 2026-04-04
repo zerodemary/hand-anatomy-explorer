@@ -9,7 +9,7 @@ https://zerodemary.github.io/hand-anatomy-explorer/
 ## v0.3 Status
 
 This repository follows an incremental commit plan.
-Current progress: **Commit 1 (Foundation Bootstrap)**.
+Current progress: **Commit 2 (Data Domain + Read Models)**.
 
 Included in this increment:
 
@@ -18,6 +18,8 @@ Included in this increment:
 - Zod schema-driven data layer
 - Static JSON dataset with stable IDs and source traceability
 - Vitest + React Testing Library test scaffolding
+- Domain read models for profile-aware measurement access
+- Derived metadata normalization and source trace aggregation utilities
 - GitHub Pages deployment workflow for `dist/`
 
 ## Product Scope (v0.3 target)

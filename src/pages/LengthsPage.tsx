@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { EnZh } from "@/components/EnZh";
 import type { Profile } from "@/data/schema";
 import type { SegmentLengthReadRow } from "@/domain/read-models";
 import {
@@ -19,7 +20,7 @@ function formatSigned(value: number | null, suffix = ""): string {
 
 function MeasurementCell({ row }: { row: SegmentLengthReadRow | null }) {
   if (!row) {
-    return <span className="text-slate-500">-</span>;
+    return <span className="text-sky-200/45">-</span>;
   }
 
   return (
@@ -32,10 +33,10 @@ function MeasurementCell({ row }: { row: SegmentLengthReadRow | null }) {
             : "border border-emerald-500/40 bg-emerald-500/10 text-emerald-200"
         }`}
       >
-        {row.meta.isDerived ? "derived" : "direct"}
+        {row.meta.isDerived ? "derived 派生" : "direct 直接"}
       </span>
       {row.meta.evidenceLevel && (
-        <span className="text-[11px] uppercase text-slate-400">{row.meta.evidenceLevel}</span>
+        <span className="text-[11px] uppercase text-sky-100/65">{row.meta.evidenceLevel}</span>
       )}
     </div>
   );
@@ -43,10 +44,10 @@ function MeasurementCell({ row }: { row: SegmentLengthReadRow | null }) {
 
 function SummaryCard({ label, value, note }: { label: string; value: string; note?: string }) {
   return (
-    <div className="rounded-lg border border-slate-700 bg-slate-950 px-3 py-2">
-      <p className="text-xs uppercase tracking-wide text-slate-400">{label}</p>
-      <p className="mt-1 text-lg font-semibold text-slate-100">{value}</p>
-      {note && <p className="text-xs text-slate-500">{note}</p>}
+    <div className="rounded-lg border border-cyan-300/20 bg-[#0b2247]/65 px-3 py-2">
+      <p className="text-xs uppercase tracking-wide text-sky-100/70">{label}</p>
+      <p className="mt-1 text-lg font-semibold text-slate-50">{value}</p>
+      {note && <p className="text-xs text-sky-200/55">{note}</p>}
     </div>
   );
 }
@@ -84,17 +85,19 @@ export function LengthsPage({ profile }: { profile: Profile }) {
   }, [rows]);
 
   return (
-    <section className="rounded-xl border border-slate-800 bg-slate-900 p-4">
-      <h2 className="text-lg font-semibold">Lengths</h2>
-      <p className="mt-1 text-sm text-slate-400">
-        Commit 4 comparison view: active profile vs compare profile with explicit derived markers.
+    <section className="rounded-xl border border-cyan-300/20 bg-[#10294f]/78 p-4 shadow-[0_18px_45px_rgba(3,10,25,0.35)]">
+      <h2 className="text-lg font-semibold">
+        <EnZh en="Lengths" zh="长度对比" />
+      </h2>
+      <p className="mt-1 text-sm text-sky-100/75">
+        Active profile vs compare profile with explicit derived markers 当前模型与对比模型的骨段长度对照。
       </p>
 
       <div className="mt-4 flex flex-wrap items-end gap-3">
-        <label className="text-sm text-slate-300">
-          Compare against
+        <label className="text-sm text-sky-100/90">
+          <EnZh en="Compare against" zh="对比模型" zhClassName="ml-1 text-[11px] text-sky-200/70" />
           <select
-            className="ml-2 rounded border border-slate-700 bg-slate-950 px-2 py-1 text-sm"
+            className="ml-2 rounded border border-cyan-300/25 bg-[#0a2040]/80 px-2 py-1 text-sm"
             value={compareProfileId}
             onChange={(event) => setCompareProfileId(event.target.value)}
             aria-label="Compare against"
@@ -110,17 +113,17 @@ export function LengthsPage({ profile }: { profile: Profile }) {
 
       <div className="mt-4 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-4">
         <SummaryCard
-          label="Comparable Segments"
+          label="Comparable Segments 可比骨段"
           value={`${summary.comparableCount}/${summary.segmentCount}`}
           note={`${profile.id} vs ${summary.compareProfileId}`}
         />
-        <SummaryCard label={`${profile.id} Derived`} value={`${summary.activeDerivedCount}`} />
+        <SummaryCard label={`${profile.id} Derived 派生值`} value={`${summary.activeDerivedCount}`} />
         <SummaryCard
-          label={`${summary.compareProfileId} Derived`}
+          label={`${summary.compareProfileId} Derived 派生值`}
           value={`${summary.compareDerivedCount}`}
         />
         <SummaryCard
-          label="Avg Delta (mm)"
+          label="Avg Delta (mm) 平均差值"
           value={formatSigned(avgDeltaMm)}
           note="active - compare"
         />
@@ -129,43 +132,45 @@ export function LengthsPage({ profile }: { profile: Profile }) {
       <div className="mt-4 overflow-auto">
         <table className="min-w-full border-collapse text-sm">
           <thead>
-            <tr className="text-left text-slate-300">
-              <th className="border-b border-slate-700 px-2 py-2">Segment</th>
-              <th className="border-b border-slate-700 px-2 py-2">{profile.label}</th>
-              <th className="border-b border-slate-700 px-2 py-2">{compareProfile?.label ?? compareProfileId}</th>
-              <th className="border-b border-slate-700 px-2 py-2">Delta (mm)</th>
-              <th className="border-b border-slate-700 px-2 py-2">Delta (%)</th>
-              <th className="border-b border-slate-700 px-2 py-2">Sources</th>
+            <tr className="text-left text-sky-100/90">
+              <th className="border-b border-cyan-300/25 px-2 py-2">Segment 骨段</th>
+              <th className="border-b border-cyan-300/25 px-2 py-2">{profile.label}</th>
+              <th className="border-b border-cyan-300/25 px-2 py-2">
+                {compareProfile?.label ?? compareProfileId}
+              </th>
+              <th className="border-b border-cyan-300/25 px-2 py-2">Delta (mm) 差值</th>
+              <th className="border-b border-cyan-300/25 px-2 py-2">Delta (%) 差值</th>
+              <th className="border-b border-cyan-300/25 px-2 py-2">Sources 来源</th>
             </tr>
           </thead>
           <tbody>
             {rows.map((row) => (
               <tr key={row.segment.id} className="align-top text-slate-100">
-                <td className="border-b border-slate-800 px-2 py-2">
+                <td className="border-b border-cyan-300/15 px-2 py-2">
                   <p className="font-mono text-xs">{row.segment.id}</p>
-                  <p className="text-xs text-slate-400">{row.segment.label}</p>
+                  <p className="text-xs text-sky-100/70">{row.segment.label}</p>
                 </td>
-                <td className="border-b border-slate-800 px-2 py-2">
+                <td className="border-b border-cyan-300/15 px-2 py-2">
                   <MeasurementCell row={row.active} />
                 </td>
-                <td className="border-b border-slate-800 px-2 py-2">
+                <td className="border-b border-cyan-300/15 px-2 py-2">
                   <MeasurementCell row={row.compare} />
                 </td>
                 <td
-                  className={`border-b border-slate-800 px-2 py-2 font-mono ${
-                    row.deltaMm !== null && row.deltaMm > 0 ? "text-cyan-300" : "text-slate-200"
+                  className={`border-b border-cyan-300/15 px-2 py-2 font-mono ${
+                    row.deltaMm !== null && row.deltaMm > 0 ? "text-cyan-200" : "text-sky-50/90"
                   }`}
                 >
                   {formatSigned(row.deltaMm, " mm")}
                 </td>
                 <td
-                  className={`border-b border-slate-800 px-2 py-2 font-mono ${
-                    row.deltaPct !== null && row.deltaPct > 0 ? "text-cyan-300" : "text-slate-200"
+                  className={`border-b border-cyan-300/15 px-2 py-2 font-mono ${
+                    row.deltaPct !== null && row.deltaPct > 0 ? "text-cyan-200" : "text-sky-50/90"
                   }`}
                 >
                   {formatSigned(row.deltaPct, "%")}
                 </td>
-                <td className="border-b border-slate-800 px-2 py-2 text-xs text-slate-400">
+                <td className="border-b border-cyan-300/15 px-2 py-2 text-xs text-sky-100/70">
                   <p className="font-mono">A: {row.active?.sourceTrace.sourceIds.join(", ") ?? "-"}</p>
                   <p className="mt-1 font-mono">B: {row.compare?.sourceTrace.sourceIds.join(", ") ?? "-"}</p>
                 </td>
@@ -175,8 +180,9 @@ export function LengthsPage({ profile }: { profile: Profile }) {
         </table>
       </div>
 
-      <p className="mt-3 text-xs text-slate-400">
-        `derived` indicates scaled or inferred values. `direct` indicates directly referenced measurements.
+      <p className="mt-3 text-xs text-sky-100/65">
+        `derived` indicates scaled or inferred values（缩放/推导值）. `direct` indicates directly referenced
+        measurements（直接文献值）.
       </p>
     </section>
   );

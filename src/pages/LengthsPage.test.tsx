@@ -9,11 +9,11 @@ describe("LengthsPage", () => {
 
     render(<LengthsPage profile={profile} />);
 
-    expect(screen.getByRole("heading", { name: "Lengths" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /Lengths/ })).toBeInTheDocument();
     expect(screen.getByLabelText("Compare against")).toBeInTheDocument();
-    expect(screen.getByText("Comparable Segments")).toBeInTheDocument();
+    expect(screen.getByText(/Comparable Segments/)).toBeInTheDocument();
     expect(screen.getByText("thumb_mc")).toBeInTheDocument();
-    expect(screen.getAllByText("derived").length).toBeGreaterThan(0);
-    expect(screen.getAllByText("direct").length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/derived/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/direct/i).length).toBeGreaterThan(0);
   });
 });

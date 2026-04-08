@@ -29,17 +29,17 @@ export type HandModelAdapterRenderer = ComponentType<HandModelAdapterProps>;
 export const HAND_MODEL_ADAPTERS: HandModelAdapterDefinition[] = [
   {
     id: "parametric_v1",
-    label: "Parametric Simplified Hand",
+    label: "Parametric Simplified Hand 参数化简化手模型",
     mode: "parametric",
     status: "active",
-    description: "Code-generated mesh model driven by profile and measurement data."
+    description: "Code-generated mesh model driven by profile and measurement data 由参数和测量数据驱动。"
   },
   {
     id: "gltf_placeholder_v1",
-    label: "GLTF Asset Adapter (Future)",
+    label: "GLTF Asset Adapter (Future) 资产适配器（未来）",
     mode: "asset",
     status: "placeholder",
-    description: "Reserved adapter interface for future low-poly GLB hand meshes."
+    description: "Reserved adapter interface for future low-poly GLB hand meshes 预留给未来低模资产。"
   }
 ];
 

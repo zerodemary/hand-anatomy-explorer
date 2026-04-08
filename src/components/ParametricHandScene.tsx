@@ -58,7 +58,7 @@ function HandGeometry({ profile, selected, hovered, onSelect, onHover }: HandGeo
     <group rotation={[-0.35, -0.15, 0]} position={[0, -0.2, 0]}>
       <mesh position={[0, 0.4, -0.4]}>
         <boxGeometry args={[7.2, 1.2, 2.4]} />
-        <meshStandardMaterial color="#1e293b" metalness={0.3} roughness={0.6} />
+        <meshStandardMaterial color="#2b4f73" metalness={0.25} roughness={0.55} />
       </mesh>
 
       {grouped.map(({ finger, segments }) => {
@@ -134,9 +134,9 @@ function HandGeometry({ profile, selected, hovered, onSelect, onHover }: HandGeo
                   >
                     <cylinderGeometry args={[0.16, 0.18, h, 12]} />
                     <meshStandardMaterial
-                      color={isSegmentSelected ? "#e2e8f0" : isSegmentHovered ? "#bfdbfe" : "#334155"}
-                      emissive={isSegmentSelected ? "#22d3ee" : isSegmentHovered ? "#38bdf8" : "#0f172a"}
-                      emissiveIntensity={isSegmentSelected ? 0.3 : isSegmentHovered ? 0.2 : 0.1}
+                      color={isSegmentSelected ? "#eaf2ff" : isSegmentHovered ? "#c8e0ff" : "#5d7fa4"}
+                      emissive={isSegmentSelected ? "#67e8f9" : isSegmentHovered ? "#7dd3fc" : "#17304d"}
+                      emissiveIntensity={isSegmentSelected ? 0.34 : isSegmentHovered ? 0.24 : 0.12}
                     />
                   </mesh>
 
@@ -199,17 +199,17 @@ export function ParametricHandScene({
   const scale = getProfileScaleById(profile.id);
 
   return (
-    <div className="h-[520px] w-full overflow-hidden rounded-xl border border-slate-800 bg-slate-950">
+    <div className="h-[520px] w-full overflow-hidden rounded-xl border border-cyan-300/20 bg-[#081b3a]">
       <Canvas
         camera={{ position: [0, 7, 14], fov: 38 }}
         onPointerMissed={() => {
           onHover(undefined);
         }}
       >
-        <ambientLight intensity={0.7} />
-        <directionalLight position={[7, 10, 8]} intensity={1.2} />
-        <directionalLight position={[-7, 8, -3]} intensity={0.4} />
-        <Grid args={[30, 30]} cellColor="#1f2937" sectionColor="#334155" position={[0, 0, 0]} />
+        <ambientLight intensity={0.9} />
+        <directionalLight position={[7, 10, 8]} intensity={1.4} />
+        <directionalLight position={[-7, 8, -3]} intensity={0.55} />
+        <Grid args={[30, 30]} cellColor="#315277" sectionColor="#466f99" position={[0, 0, 0]} />
         <group scale={[scale, scale, scale]}>
           <HandGeometry
             profile={profile}

@@ -9,7 +9,7 @@ https://zerodemary.github.io/hand-anatomy-explorer/
 ## v0.3 Status
 
 This repository follows an incremental commit plan.
-Current progress: **Commit 4 (Lengths Comparison + Derived Indicator Hardening)**.
+Current progress: **Commit 5 (Hardening + Static Deploy Docs)**.
 
 Included in this increment:
 
@@ -25,7 +25,11 @@ Included in this increment:
 - Mesh adapter host architecture with future GLTF placeholder adapter
 - Lengths page compare-against selector, delta(mm/%) columns, and derived/direct badges
 - Comparison summary cards and per-row source visibility for active vs compare measurements
+- Naming Guide domain read model and rule-based UI (joint/motion/neutral/sign conventions)
+- Additional UI/domain tests for naming and lengths critical paths
+- Accessibility improvements (`aria-pressed`, semantic table captions, source links)
 - GitHub Pages deployment workflow for `dist/`
+- Deployment + release notes docs for v0.3
 
 ## Product Scope (v0.3 target)
 

@@ -31,7 +31,7 @@ export default function App() {
             </p>
             <h1 className="mt-2 text-3xl font-semibold">Hand Anatomy Explorer v0.3</h1>
             <p className="mt-2 text-sm text-slate-400">
-              Commit 4: profile comparison UX and derived indicator hardening on Lengths page
+              Commit 5: naming guide hardening, accessibility pass, and static deploy docs
             </p>
           </div>
           <label className="flex min-w-64 flex-col gap-2 text-sm text-slate-300">
@@ -52,7 +52,7 @@ export default function App() {
         </div>
       </header>
 
-      <nav className="mx-auto flex max-w-7xl gap-3 px-6 py-4">
+      <nav className="mx-auto flex max-w-7xl gap-3 px-6 py-4" aria-label="Main sections">
         {TABS.map((item) => (
           <button
             key={item.id}
@@ -63,6 +63,7 @@ export default function App() {
                 : "border-slate-700 bg-slate-900 text-slate-300 hover:border-slate-500"
             }`}
             onClick={() => setTab(item.id)}
+            aria-pressed={tab === item.id}
           >
             {item.label}
           </button>

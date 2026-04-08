@@ -31,7 +31,7 @@ export default function App() {
             </p>
             <h1 className="mt-2 text-3xl font-semibold">Hand Anatomy Explorer v0.3</h1>
             <p className="mt-2 text-sm text-slate-400">
-              Commit 2: domain read models + derived metadata + source traceability
+              Commit 3: parametric 3D explorer interaction + adapter host architecture
             </p>
           </div>
           <label className="flex min-w-64 flex-col gap-2 text-sm text-slate-300">

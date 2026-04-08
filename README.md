@@ -9,7 +9,7 @@ https://zerodemary.github.io/hand-anatomy-explorer/
 ## v0.3 Status
 
 This repository follows an incremental commit plan.
-Current progress: **Commit 2 (Data Domain + Read Models)**.
+Current progress: **Commit 3 (Explorer 3D Parametric Interaction)**.
 
 Included in this increment:
 
@@ -20,6 +20,9 @@ Included in this increment:
 - Vitest + React Testing Library test scaffolding
 - Domain read models for profile-aware measurement access
 - Derived metadata normalization and source trace aggregation utilities
+- Parametric R3F hand interaction: hover + select highlight, clickable joints/segments
+- Profile-driven geometry updates from measurement data
+- Mesh adapter host architecture with future GLTF placeholder adapter
 - GitHub Pages deployment workflow for `dist/`
 
 ## Product Scope (v0.3 target)

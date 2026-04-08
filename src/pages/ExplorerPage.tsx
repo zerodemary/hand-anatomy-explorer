@@ -1,8 +1,14 @@
 import { useMemo, useState } from "react";
 import type { Profile } from "@/data/schema";
-import { ParametricHandScene } from "@/components/ParametricHandScene";
-import { ACTIVE_HAND_MODEL_ADAPTER } from "@/core/hand-model-adapter";
-import type { SelectableId } from "@/core/hand-model-adapter";
+import { HandModelAdapterHost } from "@/components/HandModelAdapterHost";
+import { SceneErrorBoundary } from "@/components/SceneErrorBoundary";
+import {
+  ACTIVE_HAND_MODEL_ADAPTER_ID,
+  HAND_MODEL_ADAPTERS,
+  getHandModelAdapterById,
+  type HandModelAdapterId,
+  type SelectableId
+} from "@/core/hand-model-adapter";
 import {
   getDefaultJointId,
   getJointExplorerDetail,
@@ -108,36 +114,85 @@ function SegmentDetails({ profile, segmentId }: { profile: Profile; segmentId: s
   );
 }
 
+function SelectionBadge({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded border border-slate-700 bg-slate-950 px-2 py-1 text-xs text-slate-300">
+      <span className="text-slate-400">{label}: </span>
+      <span className="font-mono">{value}</span>
+    </div>
+  );
+}
+
 export function ExplorerPage({ profile }: { profile: Profile }) {
   const [selected, setSelected] = useState<SelectableId>({ type: "joint", id: getDefaultJointId() });
+  const [hovered, setHovered] = useState<SelectableId | undefined>(undefined);
+  const [adapterId, setAdapterId] = useState<HandModelAdapterId>(ACTIVE_HAND_MODEL_ADAPTER_ID);
 
   const jointOptions = useMemo(() => listExplorerJointOptions(), []);
+  const currentAdapter = getHandModelAdapterById(adapterId);
 
   return (
     <section className="grid grid-cols-1 gap-5 lg:grid-cols-[1.2fr_0.8fr]">
       <article className="rounded-xl border border-slate-800 bg-slate-900 p-4">
-        <div className="mb-3 flex items-center justify-between">
+        <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
           <div>
-            <h2 className="text-lg font-semibold">3D Explorer (Approach A: Parametric)</h2>
-            <p className="text-sm text-slate-400">Adapter: {ACTIVE_HAND_MODEL_ADAPTER.id}</p>
+            <h2 className="text-lg font-semibold">3D Explorer (Approach A Primary)</h2>
+            <p className="text-sm text-slate-400">{currentAdapter.description}</p>
           </div>
-          <label className="text-xs text-slate-300">
-            Quick joint select
-            <select
-              className="ml-2 rounded border border-slate-700 bg-slate-950 px-2 py-1 text-sm"
-              value={selected.type === "joint" ? selected.id : ""}
-              onChange={(e) => setSelected({ type: "joint", id: e.target.value })}
-            >
-              {jointOptions.map((joint) => (
-                <option key={joint.id} value={joint.id}>
-                  {joint.label}
-                </option>
-              ))}
-            </select>
-          </label>
+
+          <div className="flex flex-wrap items-center gap-2">
+            <label className="text-xs text-slate-300">
+              Mesh adapter
+              <select
+                className="ml-2 rounded border border-slate-700 bg-slate-950 px-2 py-1 text-sm"
+                value={adapterId}
+                onChange={(e) => setAdapterId(e.target.value as HandModelAdapterId)}
+              >
+                {HAND_MODEL_ADAPTERS.map((adapter) => (
+                  <option key={adapter.id} value={adapter.id}>
+                    {adapter.label} ({adapter.status})
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <label className="text-xs text-slate-300">
+              Quick joint select
+              <select
+                className="ml-2 rounded border border-slate-700 bg-slate-950 px-2 py-1 text-sm"
+                value={selected.type === "joint" ? selected.id : ""}
+                onChange={(e) => setSelected({ type: "joint", id: e.target.value })}
+              >
+                {jointOptions.map((joint) => (
+                  <option key={joint.id} value={joint.id}>
+                    {joint.label}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
         </div>
 
-        <ParametricHandScene profile={profile} selected={selected} onSelect={setSelected} />
+        <div className="mb-3 flex flex-wrap gap-2">
+          <SelectionBadge label="adapter" value={adapterId} />
+          <SelectionBadge label="selected" value={`${selected.type}:${selected.id}`} />
+          <SelectionBadge label="hover" value={hovered ? `${hovered.type}:${hovered.id}` : "none"} />
+        </div>
+
+        <SceneErrorBoundary>
+          <HandModelAdapterHost
+            adapterId={adapterId}
+            profile={profile}
+            selected={selected}
+            hovered={hovered}
+            onSelect={(next) => {
+              setSelected(next);
+            }}
+            onHover={(next) => {
+              setHovered(next);
+            }}
+          />
+        </SceneErrorBoundary>
       </article>
 
       <aside className="rounded-xl border border-slate-800 bg-slate-900 p-4">

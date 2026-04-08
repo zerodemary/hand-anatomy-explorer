@@ -8,7 +8,7 @@ export function LengthsPage({ profile }: { profile: Profile }) {
     <section className="rounded-xl border border-slate-800 bg-slate-900 p-4">
       <h2 className="text-lg font-semibold">Lengths</h2>
       <p className="mt-1 text-sm text-slate-400">
-        Commit 2 domain read model with profile comparison and derived marker.
+        Profile comparison powered by domain read models with derived markers.
       </p>
 
       <div className="mt-4 overflow-auto">

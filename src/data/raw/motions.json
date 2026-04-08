@@ -1,0 +1,26 @@
+[
+  { "id": "thumb_cmc_fe", "jointId": "thumb_cmc", "code": "fe", "label": "Flexion / Extension", "positiveDirection": "Flexion", "negativeDirection": "Extension", "neutralDefinition": "Neutral thumb base alignment" },
+  { "id": "thumb_cmc_aa", "jointId": "thumb_cmc", "code": "aa", "label": "Abduction / Adduction", "positiveDirection": "Abduction", "negativeDirection": "Adduction", "neutralDefinition": "Neutral thumb in palm plane" },
+  { "id": "thumb_mcp_fe", "jointId": "thumb_mcp", "code": "fe", "label": "Flexion / Extension", "positiveDirection": "Flexion", "negativeDirection": "Extension" },
+  { "id": "thumb_ip_fe", "jointId": "thumb_ip", "code": "fe", "label": "Flexion / Extension", "positiveDirection": "Flexion", "negativeDirection": "Extension" },
+
+  { "id": "index_mcp_fe", "jointId": "index_mcp", "code": "fe", "label": "Flexion / Extension", "positiveDirection": "Flexion", "negativeDirection": "Extension" },
+  { "id": "index_mcp_aa", "jointId": "index_mcp", "code": "aa", "label": "Abduction / Adduction", "positiveDirection": "Abduction", "negativeDirection": "Adduction" },
+  { "id": "index_pip_fe", "jointId": "index_pip", "code": "fe", "label": "Flexion / Extension", "positiveDirection": "Flexion", "negativeDirection": "Extension" },
+  { "id": "index_dip_fe", "jointId": "index_dip", "code": "fe", "label": "Flexion / Extension", "positiveDirection": "Flexion", "negativeDirection": "Extension" },
+
+  { "id": "middle_mcp_fe", "jointId": "middle_mcp", "code": "fe", "label": "Flexion / Extension", "positiveDirection": "Flexion", "negativeDirection": "Extension" },
+  { "id": "middle_mcp_aa", "jointId": "middle_mcp", "code": "aa", "label": "Abduction / Adduction", "positiveDirection": "Abduction", "negativeDirection": "Adduction" },
+  { "id": "middle_pip_fe", "jointId": "middle_pip", "code": "fe", "label": "Flexion / Extension", "positiveDirection": "Flexion", "negativeDirection": "Extension" },
+  { "id": "middle_dip_fe", "jointId": "middle_dip", "code": "fe", "label": "Flexion / Extension", "positiveDirection": "Flexion", "negativeDirection": "Extension" },
+
+  { "id": "ring_mcp_fe", "jointId": "ring_mcp", "code": "fe", "label": "Flexion / Extension", "positiveDirection": "Flexion", "negativeDirection": "Extension" },
+  { "id": "ring_mcp_aa", "jointId": "ring_mcp", "code": "aa", "label": "Abduction / Adduction", "positiveDirection": "Abduction", "negativeDirection": "Adduction" },
+  { "id": "ring_pip_fe", "jointId": "ring_pip", "code": "fe", "label": "Flexion / Extension", "positiveDirection": "Flexion", "negativeDirection": "Extension" },
+  { "id": "ring_dip_fe", "jointId": "ring_dip", "code": "fe", "label": "Flexion / Extension", "positiveDirection": "Flexion", "negativeDirection": "Extension" },
+
+  { "id": "little_mcp_fe", "jointId": "little_mcp", "code": "fe", "label": "Flexion / Extension", "positiveDirection": "Flexion", "negativeDirection": "Extension" },
+  { "id": "little_mcp_aa", "jointId": "little_mcp", "code": "aa", "label": "Abduction / Adduction", "positiveDirection": "Abduction", "negativeDirection": "Adduction" },
+  { "id": "little_pip_fe", "jointId": "little_pip", "code": "fe", "label": "Flexion / Extension", "positiveDirection": "Flexion", "negativeDirection": "Extension" },
+  { "id": "little_dip_fe", "jointId": "little_dip", "code": "fe", "label": "Flexion / Extension", "positiveDirection": "Flexion", "negativeDirection": "Extension" }
+]

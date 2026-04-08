@@ -1,0 +1,16 @@
+[
+  {
+    "id": "western_male_50",
+    "label": "Western Male · 50th",
+    "scaleModel": "direct",
+    "note": "Reference profile"
+  },
+  {
+    "id": "asian_male_50",
+    "label": "Asian Male · 50th (x0.935)",
+    "basedOn": "western_male_50",
+    "scaleModel": "uniform",
+    "scale": 0.935,
+    "note": "Derived from western baseline"
+  }
+]

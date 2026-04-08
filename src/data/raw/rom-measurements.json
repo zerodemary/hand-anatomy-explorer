@@ -1,0 +1,562 @@
+[
+  {
+    "id": "rom_western_thumb_cmc_fe",
+    "profileId": "western_male_50",
+    "motionId": "thumb_cmc_fe",
+    "minDeg": -15,
+    "maxDeg": 20,
+    "sourceIds": [
+      "aaos_joint_motion_2e"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "rom_asian_thumb_cmc_fe",
+    "profileId": "asian_male_50",
+    "motionId": "thumb_cmc_fe",
+    "minDeg": -15,
+    "maxDeg": 20,
+    "sourceIds": [
+      "aaos_joint_motion_2e",
+      "kuo_2009_scale"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "derived",
+    "notes": [
+      "Profile-specific ROM unavailable; inherited from western baseline for v0.3."
+    ]
+  },
+  {
+    "id": "rom_western_thumb_cmc_aa",
+    "profileId": "western_male_50",
+    "motionId": "thumb_cmc_aa",
+    "minDeg": -30,
+    "maxDeg": 50,
+    "sourceIds": [
+      "aaos_joint_motion_2e"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "rom_asian_thumb_cmc_aa",
+    "profileId": "asian_male_50",
+    "motionId": "thumb_cmc_aa",
+    "minDeg": -30,
+    "maxDeg": 50,
+    "sourceIds": [
+      "aaos_joint_motion_2e",
+      "kuo_2009_scale"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "derived",
+    "notes": [
+      "Profile-specific ROM unavailable; inherited from western baseline for v0.3."
+    ]
+  },
+  {
+    "id": "rom_western_thumb_mcp_fe",
+    "profileId": "western_male_50",
+    "motionId": "thumb_mcp_fe",
+    "minDeg": -10,
+    "maxDeg": 50,
+    "sourceIds": [
+      "aaos_joint_motion_2e"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "rom_asian_thumb_mcp_fe",
+    "profileId": "asian_male_50",
+    "motionId": "thumb_mcp_fe",
+    "minDeg": -10,
+    "maxDeg": 50,
+    "sourceIds": [
+      "aaos_joint_motion_2e",
+      "kuo_2009_scale"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "derived",
+    "notes": [
+      "Profile-specific ROM unavailable; inherited from western baseline for v0.3."
+    ]
+  },
+  {
+    "id": "rom_western_thumb_ip_fe",
+    "profileId": "western_male_50",
+    "motionId": "thumb_ip_fe",
+    "minDeg": -25,
+    "maxDeg": 80,
+    "sourceIds": [
+      "aaos_joint_motion_2e"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "rom_asian_thumb_ip_fe",
+    "profileId": "asian_male_50",
+    "motionId": "thumb_ip_fe",
+    "minDeg": -25,
+    "maxDeg": 80,
+    "sourceIds": [
+      "aaos_joint_motion_2e",
+      "kuo_2009_scale"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "derived",
+    "notes": [
+      "Profile-specific ROM unavailable; inherited from western baseline for v0.3."
+    ]
+  },
+  {
+    "id": "rom_western_index_mcp_fe",
+    "profileId": "western_male_50",
+    "motionId": "index_mcp_fe",
+    "minDeg": -30,
+    "maxDeg": 90,
+    "sourceIds": [
+      "aaos_joint_motion_2e"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "rom_asian_index_mcp_fe",
+    "profileId": "asian_male_50",
+    "motionId": "index_mcp_fe",
+    "minDeg": -30,
+    "maxDeg": 90,
+    "sourceIds": [
+      "aaos_joint_motion_2e",
+      "kuo_2009_scale"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "derived",
+    "notes": [
+      "Profile-specific ROM unavailable; inherited from western baseline for v0.3."
+    ]
+  },
+  {
+    "id": "rom_western_index_mcp_aa",
+    "profileId": "western_male_50",
+    "motionId": "index_mcp_aa",
+    "minDeg": -20,
+    "maxDeg": 20,
+    "sourceIds": [
+      "aaos_joint_motion_2e"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "rom_asian_index_mcp_aa",
+    "profileId": "asian_male_50",
+    "motionId": "index_mcp_aa",
+    "minDeg": -20,
+    "maxDeg": 20,
+    "sourceIds": [
+      "aaos_joint_motion_2e",
+      "kuo_2009_scale"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "derived",
+    "notes": [
+      "Profile-specific ROM unavailable; inherited from western baseline for v0.3."
+    ]
+  },
+  {
+    "id": "rom_western_index_pip_fe",
+    "profileId": "western_male_50",
+    "motionId": "index_pip_fe",
+    "minDeg": 0,
+    "maxDeg": 100,
+    "sourceIds": [
+      "aaos_joint_motion_2e"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "rom_asian_index_pip_fe",
+    "profileId": "asian_male_50",
+    "motionId": "index_pip_fe",
+    "minDeg": 0,
+    "maxDeg": 100,
+    "sourceIds": [
+      "aaos_joint_motion_2e",
+      "kuo_2009_scale"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "derived",
+    "notes": [
+      "Profile-specific ROM unavailable; inherited from western baseline for v0.3."
+    ]
+  },
+  {
+    "id": "rom_western_index_dip_fe",
+    "profileId": "western_male_50",
+    "motionId": "index_dip_fe",
+    "minDeg": -20,
+    "maxDeg": 70,
+    "sourceIds": [
+      "aaos_joint_motion_2e"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "rom_asian_index_dip_fe",
+    "profileId": "asian_male_50",
+    "motionId": "index_dip_fe",
+    "minDeg": -20,
+    "maxDeg": 70,
+    "sourceIds": [
+      "aaos_joint_motion_2e",
+      "kuo_2009_scale"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "derived",
+    "notes": [
+      "Profile-specific ROM unavailable; inherited from western baseline for v0.3."
+    ]
+  },
+  {
+    "id": "rom_western_middle_mcp_fe",
+    "profileId": "western_male_50",
+    "motionId": "middle_mcp_fe",
+    "minDeg": -30,
+    "maxDeg": 90,
+    "sourceIds": [
+      "aaos_joint_motion_2e"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "rom_asian_middle_mcp_fe",
+    "profileId": "asian_male_50",
+    "motionId": "middle_mcp_fe",
+    "minDeg": -30,
+    "maxDeg": 90,
+    "sourceIds": [
+      "aaos_joint_motion_2e",
+      "kuo_2009_scale"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "derived",
+    "notes": [
+      "Profile-specific ROM unavailable; inherited from western baseline for v0.3."
+    ]
+  },
+  {
+    "id": "rom_western_middle_mcp_aa",
+    "profileId": "western_male_50",
+    "motionId": "middle_mcp_aa",
+    "minDeg": -15,
+    "maxDeg": 15,
+    "sourceIds": [
+      "aaos_joint_motion_2e"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "rom_asian_middle_mcp_aa",
+    "profileId": "asian_male_50",
+    "motionId": "middle_mcp_aa",
+    "minDeg": -15,
+    "maxDeg": 15,
+    "sourceIds": [
+      "aaos_joint_motion_2e",
+      "kuo_2009_scale"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "derived",
+    "notes": [
+      "Profile-specific ROM unavailable; inherited from western baseline for v0.3."
+    ]
+  },
+  {
+    "id": "rom_western_middle_pip_fe",
+    "profileId": "western_male_50",
+    "motionId": "middle_pip_fe",
+    "minDeg": 0,
+    "maxDeg": 100,
+    "sourceIds": [
+      "aaos_joint_motion_2e"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "rom_asian_middle_pip_fe",
+    "profileId": "asian_male_50",
+    "motionId": "middle_pip_fe",
+    "minDeg": 0,
+    "maxDeg": 100,
+    "sourceIds": [
+      "aaos_joint_motion_2e",
+      "kuo_2009_scale"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "derived",
+    "notes": [
+      "Profile-specific ROM unavailable; inherited from western baseline for v0.3."
+    ]
+  },
+  {
+    "id": "rom_western_middle_dip_fe",
+    "profileId": "western_male_50",
+    "motionId": "middle_dip_fe",
+    "minDeg": -20,
+    "maxDeg": 70,
+    "sourceIds": [
+      "aaos_joint_motion_2e"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "rom_asian_middle_dip_fe",
+    "profileId": "asian_male_50",
+    "motionId": "middle_dip_fe",
+    "minDeg": -20,
+    "maxDeg": 70,
+    "sourceIds": [
+      "aaos_joint_motion_2e",
+      "kuo_2009_scale"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "derived",
+    "notes": [
+      "Profile-specific ROM unavailable; inherited from western baseline for v0.3."
+    ]
+  },
+  {
+    "id": "rom_western_ring_mcp_fe",
+    "profileId": "western_male_50",
+    "motionId": "ring_mcp_fe",
+    "minDeg": -30,
+    "maxDeg": 90,
+    "sourceIds": [
+      "aaos_joint_motion_2e"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "rom_asian_ring_mcp_fe",
+    "profileId": "asian_male_50",
+    "motionId": "ring_mcp_fe",
+    "minDeg": -30,
+    "maxDeg": 90,
+    "sourceIds": [
+      "aaos_joint_motion_2e",
+      "kuo_2009_scale"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "derived",
+    "notes": [
+      "Profile-specific ROM unavailable; inherited from western baseline for v0.3."
+    ]
+  },
+  {
+    "id": "rom_western_ring_mcp_aa",
+    "profileId": "western_male_50",
+    "motionId": "ring_mcp_aa",
+    "minDeg": -20,
+    "maxDeg": 20,
+    "sourceIds": [
+      "aaos_joint_motion_2e"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "rom_asian_ring_mcp_aa",
+    "profileId": "asian_male_50",
+    "motionId": "ring_mcp_aa",
+    "minDeg": -20,
+    "maxDeg": 20,
+    "sourceIds": [
+      "aaos_joint_motion_2e",
+      "kuo_2009_scale"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "derived",
+    "notes": [
+      "Profile-specific ROM unavailable; inherited from western baseline for v0.3."
+    ]
+  },
+  {
+    "id": "rom_western_ring_pip_fe",
+    "profileId": "western_male_50",
+    "motionId": "ring_pip_fe",
+    "minDeg": 0,
+    "maxDeg": 100,
+    "sourceIds": [
+      "aaos_joint_motion_2e"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "rom_asian_ring_pip_fe",
+    "profileId": "asian_male_50",
+    "motionId": "ring_pip_fe",
+    "minDeg": 0,
+    "maxDeg": 100,
+    "sourceIds": [
+      "aaos_joint_motion_2e",
+      "kuo_2009_scale"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "derived",
+    "notes": [
+      "Profile-specific ROM unavailable; inherited from western baseline for v0.3."
+    ]
+  },
+  {
+    "id": "rom_western_ring_dip_fe",
+    "profileId": "western_male_50",
+    "motionId": "ring_dip_fe",
+    "minDeg": -20,
+    "maxDeg": 70,
+    "sourceIds": [
+      "aaos_joint_motion_2e"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "rom_asian_ring_dip_fe",
+    "profileId": "asian_male_50",
+    "motionId": "ring_dip_fe",
+    "minDeg": -20,
+    "maxDeg": 70,
+    "sourceIds": [
+      "aaos_joint_motion_2e",
+      "kuo_2009_scale"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "derived",
+    "notes": [
+      "Profile-specific ROM unavailable; inherited from western baseline for v0.3."
+    ]
+  },
+  {
+    "id": "rom_western_little_mcp_fe",
+    "profileId": "western_male_50",
+    "motionId": "little_mcp_fe",
+    "minDeg": -30,
+    "maxDeg": 90,
+    "sourceIds": [
+      "aaos_joint_motion_2e"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "rom_asian_little_mcp_fe",
+    "profileId": "asian_male_50",
+    "motionId": "little_mcp_fe",
+    "minDeg": -30,
+    "maxDeg": 90,
+    "sourceIds": [
+      "aaos_joint_motion_2e",
+      "kuo_2009_scale"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "derived",
+    "notes": [
+      "Profile-specific ROM unavailable; inherited from western baseline for v0.3."
+    ]
+  },
+  {
+    "id": "rom_western_little_mcp_aa",
+    "profileId": "western_male_50",
+    "motionId": "little_mcp_aa",
+    "minDeg": -30,
+    "maxDeg": 30,
+    "sourceIds": [
+      "aaos_joint_motion_2e"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "rom_asian_little_mcp_aa",
+    "profileId": "asian_male_50",
+    "motionId": "little_mcp_aa",
+    "minDeg": -30,
+    "maxDeg": 30,
+    "sourceIds": [
+      "aaos_joint_motion_2e",
+      "kuo_2009_scale"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "derived",
+    "notes": [
+      "Profile-specific ROM unavailable; inherited from western baseline for v0.3."
+    ]
+  },
+  {
+    "id": "rom_western_little_pip_fe",
+    "profileId": "western_male_50",
+    "motionId": "little_pip_fe",
+    "minDeg": 0,
+    "maxDeg": 100,
+    "sourceIds": [
+      "aaos_joint_motion_2e"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "rom_asian_little_pip_fe",
+    "profileId": "asian_male_50",
+    "motionId": "little_pip_fe",
+    "minDeg": 0,
+    "maxDeg": 100,
+    "sourceIds": [
+      "aaos_joint_motion_2e",
+      "kuo_2009_scale"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "derived",
+    "notes": [
+      "Profile-specific ROM unavailable; inherited from western baseline for v0.3."
+    ]
+  },
+  {
+    "id": "rom_western_little_dip_fe",
+    "profileId": "western_male_50",
+    "motionId": "little_dip_fe",
+    "minDeg": -20,
+    "maxDeg": 70,
+    "sourceIds": [
+      "aaos_joint_motion_2e"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "rom_asian_little_dip_fe",
+    "profileId": "asian_male_50",
+    "motionId": "little_dip_fe",
+    "minDeg": -20,
+    "maxDeg": 70,
+    "sourceIds": [
+      "aaos_joint_motion_2e",
+      "kuo_2009_scale"
+    ],
+    "measurementType": "reference",
+    "evidenceLevel": "derived",
+    "notes": [
+      "Profile-specific ROM unavailable; inherited from western baseline for v0.3."
+    ]
+  }
+]

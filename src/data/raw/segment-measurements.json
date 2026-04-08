@@ -1,0 +1,458 @@
+[
+  {
+    "id": "seg_western_thumb_mc",
+    "profileId": "western_male_50",
+    "segmentId": "thumb_mc",
+    "lengthMm": 49,
+    "sourceIds": [
+      "buryanov_kotiuk_2010"
+    ],
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "seg_asian_thumb_mc",
+    "profileId": "asian_male_50",
+    "segmentId": "thumb_mc",
+    "lengthMm": 45.8,
+    "sourceIds": [
+      "buryanov_kotiuk_2010",
+      "kuo_2009_scale"
+    ],
+    "evidenceLevel": "derived",
+    "notes": [
+      "Derived by uniform scale factor 0.935 from western baseline."
+    ]
+  },
+  {
+    "id": "seg_western_thumb_pp",
+    "profileId": "western_male_50",
+    "segmentId": "thumb_pp",
+    "lengthMm": 32,
+    "sourceIds": [
+      "buryanov_kotiuk_2010"
+    ],
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "seg_asian_thumb_pp",
+    "profileId": "asian_male_50",
+    "segmentId": "thumb_pp",
+    "lengthMm": 29.9,
+    "sourceIds": [
+      "buryanov_kotiuk_2010",
+      "kuo_2009_scale"
+    ],
+    "evidenceLevel": "derived",
+    "notes": [
+      "Derived by uniform scale factor 0.935 from western baseline."
+    ]
+  },
+  {
+    "id": "seg_western_thumb_dp",
+    "profileId": "western_male_50",
+    "segmentId": "thumb_dp",
+    "lengthMm": 22,
+    "sourceIds": [
+      "buryanov_kotiuk_2010"
+    ],
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "seg_asian_thumb_dp",
+    "profileId": "asian_male_50",
+    "segmentId": "thumb_dp",
+    "lengthMm": 20.6,
+    "sourceIds": [
+      "buryanov_kotiuk_2010",
+      "kuo_2009_scale"
+    ],
+    "evidenceLevel": "derived",
+    "notes": [
+      "Derived by uniform scale factor 0.935 from western baseline."
+    ]
+  },
+  {
+    "id": "seg_western_index_mc",
+    "profileId": "western_male_50",
+    "segmentId": "index_mc",
+    "lengthMm": 66,
+    "sourceIds": [
+      "buryanov_kotiuk_2010"
+    ],
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "seg_asian_index_mc",
+    "profileId": "asian_male_50",
+    "segmentId": "index_mc",
+    "lengthMm": 61.7,
+    "sourceIds": [
+      "buryanov_kotiuk_2010",
+      "kuo_2009_scale"
+    ],
+    "evidenceLevel": "derived",
+    "notes": [
+      "Derived by uniform scale factor 0.935 from western baseline."
+    ]
+  },
+  {
+    "id": "seg_western_index_pp",
+    "profileId": "western_male_50",
+    "segmentId": "index_pp",
+    "lengthMm": 40,
+    "sourceIds": [
+      "buryanov_kotiuk_2010"
+    ],
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "seg_asian_index_pp",
+    "profileId": "asian_male_50",
+    "segmentId": "index_pp",
+    "lengthMm": 37.4,
+    "sourceIds": [
+      "buryanov_kotiuk_2010",
+      "kuo_2009_scale"
+    ],
+    "evidenceLevel": "derived",
+    "notes": [
+      "Derived by uniform scale factor 0.935 from western baseline."
+    ]
+  },
+  {
+    "id": "seg_western_index_mp",
+    "profileId": "western_male_50",
+    "segmentId": "index_mp",
+    "lengthMm": 22,
+    "sourceIds": [
+      "buryanov_kotiuk_2010"
+    ],
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "seg_asian_index_mp",
+    "profileId": "asian_male_50",
+    "segmentId": "index_mp",
+    "lengthMm": 20.6,
+    "sourceIds": [
+      "buryanov_kotiuk_2010",
+      "kuo_2009_scale"
+    ],
+    "evidenceLevel": "derived",
+    "notes": [
+      "Derived by uniform scale factor 0.935 from western baseline."
+    ]
+  },
+  {
+    "id": "seg_western_index_dp",
+    "profileId": "western_male_50",
+    "segmentId": "index_dp",
+    "lengthMm": 16,
+    "sourceIds": [
+      "buryanov_kotiuk_2010"
+    ],
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "seg_asian_index_dp",
+    "profileId": "asian_male_50",
+    "segmentId": "index_dp",
+    "lengthMm": 15,
+    "sourceIds": [
+      "buryanov_kotiuk_2010",
+      "kuo_2009_scale"
+    ],
+    "evidenceLevel": "derived",
+    "notes": [
+      "Derived by uniform scale factor 0.935 from western baseline."
+    ]
+  },
+  {
+    "id": "seg_western_middle_mc",
+    "profileId": "western_male_50",
+    "segmentId": "middle_mc",
+    "lengthMm": 69,
+    "sourceIds": [
+      "buryanov_kotiuk_2010"
+    ],
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "seg_asian_middle_mc",
+    "profileId": "asian_male_50",
+    "segmentId": "middle_mc",
+    "lengthMm": 64.5,
+    "sourceIds": [
+      "buryanov_kotiuk_2010",
+      "kuo_2009_scale"
+    ],
+    "evidenceLevel": "derived",
+    "notes": [
+      "Derived by uniform scale factor 0.935 from western baseline."
+    ]
+  },
+  {
+    "id": "seg_western_middle_pp",
+    "profileId": "western_male_50",
+    "segmentId": "middle_pp",
+    "lengthMm": 44,
+    "sourceIds": [
+      "buryanov_kotiuk_2010"
+    ],
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "seg_asian_middle_pp",
+    "profileId": "asian_male_50",
+    "segmentId": "middle_pp",
+    "lengthMm": 41.1,
+    "sourceIds": [
+      "buryanov_kotiuk_2010",
+      "kuo_2009_scale"
+    ],
+    "evidenceLevel": "derived",
+    "notes": [
+      "Derived by uniform scale factor 0.935 from western baseline."
+    ]
+  },
+  {
+    "id": "seg_western_middle_mp",
+    "profileId": "western_male_50",
+    "segmentId": "middle_mp",
+    "lengthMm": 24,
+    "sourceIds": [
+      "buryanov_kotiuk_2010"
+    ],
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "seg_asian_middle_mp",
+    "profileId": "asian_male_50",
+    "segmentId": "middle_mp",
+    "lengthMm": 22.4,
+    "sourceIds": [
+      "buryanov_kotiuk_2010",
+      "kuo_2009_scale"
+    ],
+    "evidenceLevel": "derived",
+    "notes": [
+      "Derived by uniform scale factor 0.935 from western baseline."
+    ]
+  },
+  {
+    "id": "seg_western_middle_dp",
+    "profileId": "western_male_50",
+    "segmentId": "middle_dp",
+    "lengthMm": 17,
+    "sourceIds": [
+      "buryanov_kotiuk_2010"
+    ],
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "seg_asian_middle_dp",
+    "profileId": "asian_male_50",
+    "segmentId": "middle_dp",
+    "lengthMm": 15.9,
+    "sourceIds": [
+      "buryanov_kotiuk_2010",
+      "kuo_2009_scale"
+    ],
+    "evidenceLevel": "derived",
+    "notes": [
+      "Derived by uniform scale factor 0.935 from western baseline."
+    ]
+  },
+  {
+    "id": "seg_western_ring_mc",
+    "profileId": "western_male_50",
+    "segmentId": "ring_mc",
+    "lengthMm": 65,
+    "sourceIds": [
+      "buryanov_kotiuk_2010"
+    ],
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "seg_asian_ring_mc",
+    "profileId": "asian_male_50",
+    "segmentId": "ring_mc",
+    "lengthMm": 60.8,
+    "sourceIds": [
+      "buryanov_kotiuk_2010",
+      "kuo_2009_scale"
+    ],
+    "evidenceLevel": "derived",
+    "notes": [
+      "Derived by uniform scale factor 0.935 from western baseline."
+    ]
+  },
+  {
+    "id": "seg_western_ring_pp",
+    "profileId": "western_male_50",
+    "segmentId": "ring_pp",
+    "lengthMm": 41,
+    "sourceIds": [
+      "buryanov_kotiuk_2010"
+    ],
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "seg_asian_ring_pp",
+    "profileId": "asian_male_50",
+    "segmentId": "ring_pp",
+    "lengthMm": 38.3,
+    "sourceIds": [
+      "buryanov_kotiuk_2010",
+      "kuo_2009_scale"
+    ],
+    "evidenceLevel": "derived",
+    "notes": [
+      "Derived by uniform scale factor 0.935 from western baseline."
+    ]
+  },
+  {
+    "id": "seg_western_ring_mp",
+    "profileId": "western_male_50",
+    "segmentId": "ring_mp",
+    "lengthMm": 22,
+    "sourceIds": [
+      "buryanov_kotiuk_2010"
+    ],
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "seg_asian_ring_mp",
+    "profileId": "asian_male_50",
+    "segmentId": "ring_mp",
+    "lengthMm": 20.6,
+    "sourceIds": [
+      "buryanov_kotiuk_2010",
+      "kuo_2009_scale"
+    ],
+    "evidenceLevel": "derived",
+    "notes": [
+      "Derived by uniform scale factor 0.935 from western baseline."
+    ]
+  },
+  {
+    "id": "seg_western_ring_dp",
+    "profileId": "western_male_50",
+    "segmentId": "ring_dp",
+    "lengthMm": 16,
+    "sourceIds": [
+      "buryanov_kotiuk_2010"
+    ],
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "seg_asian_ring_dp",
+    "profileId": "asian_male_50",
+    "segmentId": "ring_dp",
+    "lengthMm": 15,
+    "sourceIds": [
+      "buryanov_kotiuk_2010",
+      "kuo_2009_scale"
+    ],
+    "evidenceLevel": "derived",
+    "notes": [
+      "Derived by uniform scale factor 0.935 from western baseline."
+    ]
+  },
+  {
+    "id": "seg_western_little_mc",
+    "profileId": "western_male_50",
+    "segmentId": "little_mc",
+    "lengthMm": 57,
+    "sourceIds": [
+      "buryanov_kotiuk_2010"
+    ],
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "seg_asian_little_mc",
+    "profileId": "asian_male_50",
+    "segmentId": "little_mc",
+    "lengthMm": 53.3,
+    "sourceIds": [
+      "buryanov_kotiuk_2010",
+      "kuo_2009_scale"
+    ],
+    "evidenceLevel": "derived",
+    "notes": [
+      "Derived by uniform scale factor 0.935 from western baseline."
+    ]
+  },
+  {
+    "id": "seg_western_little_pp",
+    "profileId": "western_male_50",
+    "segmentId": "little_pp",
+    "lengthMm": 31,
+    "sourceIds": [
+      "buryanov_kotiuk_2010"
+    ],
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "seg_asian_little_pp",
+    "profileId": "asian_male_50",
+    "segmentId": "little_pp",
+    "lengthMm": 29,
+    "sourceIds": [
+      "buryanov_kotiuk_2010",
+      "kuo_2009_scale"
+    ],
+    "evidenceLevel": "derived",
+    "notes": [
+      "Derived by uniform scale factor 0.935 from western baseline."
+    ]
+  },
+  {
+    "id": "seg_western_little_mp",
+    "profileId": "western_male_50",
+    "segmentId": "little_mp",
+    "lengthMm": 18,
+    "sourceIds": [
+      "buryanov_kotiuk_2010"
+    ],
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "seg_asian_little_mp",
+    "profileId": "asian_male_50",
+    "segmentId": "little_mp",
+    "lengthMm": 16.8,
+    "sourceIds": [
+      "buryanov_kotiuk_2010",
+      "kuo_2009_scale"
+    ],
+    "evidenceLevel": "derived",
+    "notes": [
+      "Derived by uniform scale factor 0.935 from western baseline."
+    ]
+  },
+  {
+    "id": "seg_western_little_dp",
+    "profileId": "western_male_50",
+    "segmentId": "little_dp",
+    "lengthMm": 14,
+    "sourceIds": [
+      "buryanov_kotiuk_2010"
+    ],
+    "evidenceLevel": "high"
+  },
+  {
+    "id": "seg_asian_little_dp",
+    "profileId": "asian_male_50",
+    "segmentId": "little_dp",
+    "lengthMm": 13.1,
+    "sourceIds": [
+      "buryanov_kotiuk_2010",
+      "kuo_2009_scale"
+    ],
+    "evidenceLevel": "derived",
+    "notes": [
+      "Derived by uniform scale factor 0.935 from western baseline."
+    ]
+  }
+]

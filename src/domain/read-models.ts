@@ -43,9 +43,19 @@ export type SegmentExplorerDetailReadModel = {
 
 export type LengthComparisonRowReadModel = {
   segment: Segment;
-  western: SegmentLengthReadRow | null;
-  asian: SegmentLengthReadRow | null;
-  current: SegmentLengthReadRow | null;
+  active: SegmentLengthReadRow | null;
+  compare: SegmentLengthReadRow | null;
+  deltaMm: number | null;
+  deltaPct: number | null;
+};
+
+export type LengthComparisonSummaryReadModel = {
+  activeProfileId: string;
+  compareProfileId: string;
+  segmentCount: number;
+  comparableCount: number;
+  activeDerivedCount: number;
+  compareDerivedCount: number;
 };
 
 function toJointRomReadRow(measurement: RomMeasurement, motion: Motion): JointRomReadRow {
@@ -164,25 +174,68 @@ export function getSegmentExplorerDetail(
   };
 }
 
-export function getLengthComparisonRows(activeProfileId: string): LengthComparisonRowReadModel[] {
+function getSegmentMeasurementByProfile(
+  profileId: string,
+  segmentId: string
+): SegmentMeasurement | undefined {
+  return SEGMENT_MEASUREMENTS.find(
+    (item) => item.profileId === profileId && item.segmentId === segmentId
+  );
+}
+
+function getLengthDelta(activeLength: number, compareLength: number) {
+  const deltaMm = activeLength - compareLength;
+  const deltaPct = compareLength === 0 ? null : (deltaMm / compareLength) * 100;
+  return { deltaMm, deltaPct };
+}
+
+export function getDefaultComparisonProfileId(activeProfileId: string): string {
+  return PROFILES.find((profile) => profile.id !== activeProfileId)?.id ?? activeProfileId;
+}
+
+export function listComparisonProfiles(activeProfileId: string): Profile[] {
+  const otherProfiles = PROFILES.filter((profile) => profile.id !== activeProfileId);
+  return otherProfiles.length > 0 ? otherProfiles : PROFILES;
+}
+
+export function getLengthComparisonRows(
+  activeProfileId: string,
+  compareProfileId = getDefaultComparisonProfileId(activeProfileId)
+): LengthComparisonRowReadModel[] {
   return SEGMENTS.map((segment) => {
-    const western = SEGMENT_MEASUREMENTS.find(
-      (item) => item.profileId === "western_male_50" && item.segmentId === segment.id
-    );
-    const asian = SEGMENT_MEASUREMENTS.find(
-      (item) => item.profileId === "asian_male_50" && item.segmentId === segment.id
-    );
-    const current = SEGMENT_MEASUREMENTS.find(
-      (item) => item.profileId === activeProfileId && item.segmentId === segment.id
-    );
+    const active = getSegmentMeasurementByProfile(activeProfileId, segment.id);
+    const compare = getSegmentMeasurementByProfile(compareProfileId, segment.id);
+
+    const activeRead = active ? toSegmentLengthReadRow(active, segment) : null;
+    const compareRead = compare ? toSegmentLengthReadRow(compare, segment) : null;
+    const delta =
+      activeRead && compareRead ? getLengthDelta(activeRead.lengthMm, compareRead.lengthMm) : null;
 
     return {
       segment,
-      western: western ? toSegmentLengthReadRow(western, segment) : null,
-      asian: asian ? toSegmentLengthReadRow(asian, segment) : null,
-      current: current ? toSegmentLengthReadRow(current, segment) : null
+      active: activeRead,
+      compare: compareRead,
+      deltaMm: delta?.deltaMm ?? null,
+      deltaPct: delta?.deltaPct ?? null
     };
   });
+}
+
+export function getLengthComparisonSummary(
+  activeProfileId: string,
+  compareProfileId = getDefaultComparisonProfileId(activeProfileId)
+): LengthComparisonSummaryReadModel {
+  const rows = getLengthComparisonRows(activeProfileId, compareProfileId);
+  const comparableRows = rows.filter((row) => row.active !== null && row.compare !== null);
+
+  return {
+    activeProfileId,
+    compareProfileId,
+    segmentCount: rows.length,
+    comparableCount: comparableRows.length,
+    activeDerivedCount: rows.filter((row) => row.active?.meta.isDerived).length,
+    compareDerivedCount: rows.filter((row) => row.compare?.meta.isDerived).length
+  };
 }
 
 export function listFingerIdsInOrder(): string[] {

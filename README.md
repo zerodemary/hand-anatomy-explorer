@@ -9,7 +9,7 @@ https://zerodemary.github.io/hand-anatomy-explorer/
 ## v0.3 Status
 
 This repository follows an incremental commit plan.
-Current progress: **Commit 3 (Explorer 3D Parametric Interaction)**.
+Current progress: **Commit 4 (Lengths Comparison + Derived Indicator Hardening)**.
 
 Included in this increment:
 
@@ -23,6 +23,8 @@ Included in this increment:
 - Parametric R3F hand interaction: hover + select highlight, clickable joints/segments
 - Profile-driven geometry updates from measurement data
 - Mesh adapter host architecture with future GLTF placeholder adapter
+- Lengths page compare-against selector, delta(mm/%) columns, and derived/direct badges
+- Comparison summary cards and per-row source visibility for active vs compare measurements
 - GitHub Pages deployment workflow for `dist/`
 
 ## Product Scope (v0.3 target)
